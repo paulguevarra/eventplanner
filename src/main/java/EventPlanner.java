@@ -3,15 +3,18 @@ import java.awt.*;
 public class EventPlanner {
     private int expectedNumberGuests;
     private int expectedDurationTime;
+    
 
-
-
-    public int countExpectedGuests(int userGuestNum){
-        expectedNumberGuests = userGuestNum;
+    public EventPlanner (int duration, int guestCount){
+        expectedDurationTime = duration;
+        expectedNumberGuests = guestCount;
+    }
+    public int countExpectedGuests(){
         return expectedNumberGuests;
     }
-    public int receiveGuestTimeDuration(int userEventDuration){
-        expectedDurationTime = userEventDuration;
+    public int receiveGuestTimeDuration(){
         return expectedDurationTime;
     }
+
+
 }
