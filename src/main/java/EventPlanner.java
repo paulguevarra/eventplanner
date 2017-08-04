@@ -1,4 +1,7 @@
 import java.awt.*;
+import java.util.Map;
+import java.util.HashMap;
+
 
 public class EventPlanner {
     private int expectedNumberGuests;
@@ -35,7 +38,10 @@ public class EventPlanner {
         return chosenEntertainment;
     }
     public int calculateCostTotal(int duration, int guestCount, String food, String beverage, String entertainment){
-        totalCost = (100*duration);
+        Map<String,Integer> serviceProvided = new HashMap<String, Integer>();
+        serviceProvided.put("american",10);
+
+        totalCost = (100*duration)+(guestCount*serviceProvided.get(food));
         return totalCost;
     }
 }
