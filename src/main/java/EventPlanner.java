@@ -25,4 +25,8 @@ public class EventPlanner {
     public String getChosenFood() {
         return chosenFood;
     }
+
+    public String getChosenBeverage() {
+        return chosenBeverage;
+    }
 }
