@@ -28,5 +28,10 @@ public class EventPlannerTest {
         EventPlanner testEventPlanner = new EventPlanner(4,25,"american","soda","dj");
         assertEquals("soda", testEventPlanner.getChosenBeverage());
     }
+    @Test
+    public void newEventPlanner_getChosenEntertainment_Dj(){
+        EventPlanner testEventPlanner = new EventPlanner(4,25,"american","soda","dj");
+        assertEquals("dj", testEventPlanner.getChosenEntertainment());
+    }
 
 }
