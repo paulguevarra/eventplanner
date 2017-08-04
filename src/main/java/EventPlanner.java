@@ -38,10 +38,17 @@ public class EventPlanner {
         return chosenEntertainment;
     }
     public int calculateCostTotal(int duration, int guestCount, String food, String beverage, String entertainment){
-        Map<String,Integer> serviceProvided = new HashMap<String, Integer>();
+        Map<String,Integer> serviceProvided = new HashMap<>();
         serviceProvided.put("american",10);
+        serviceProvided.put("mexican",11);
+        serviceProvided.put("asian",11);
+        serviceProvided.put("french",12);
         serviceProvided.put("soda",2);
+        serviceProvided.put("beer",9);
+        serviceProvided.put("wine",10);
         serviceProvided.put("dj",200);
+        serviceProvided.put("live band",375);
+        serviceProvided.put("none",0);
 
         totalCost = (100*duration)+(guestCount*serviceProvided.get(food))+(guestCount*serviceProvided.get(beverage))+(duration*serviceProvided.get(entertainment));
         return totalCost;
