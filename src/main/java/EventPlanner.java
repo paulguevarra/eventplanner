@@ -6,6 +6,7 @@ public class EventPlanner {
     private String chosenFood;
     private String chosenBeverage;
     private String chosenEntertainment;
+    private int totalCost;
 
     public EventPlanner (int duration, int guestCount, String food, String beverage, String entertainment){
         expectedDurationTime = duration;
@@ -32,5 +33,9 @@ public class EventPlanner {
 
     public String getChosenEntertainment() {
         return chosenEntertainment;
+    }
+    public int calculateCostTotal(int duration, int guestCount, String food, String beverage, String entertainment){
+        totalCost = (100*duration);
+        return totalCost;
     }
 }
