@@ -40,8 +40,9 @@ public class EventPlanner {
     public int calculateCostTotal(int duration, int guestCount, String food, String beverage, String entertainment){
         Map<String,Integer> serviceProvided = new HashMap<String, Integer>();
         serviceProvided.put("american",10);
+        serviceProvided.put("soda",2);
 
-        totalCost = (100*duration)+(guestCount*serviceProvided.get(food));
+        totalCost = (100*duration)+(guestCount*serviceProvided.get(food))+(guestCount*serviceProvided.get(beverage));
         return totalCost;
     }
 }
