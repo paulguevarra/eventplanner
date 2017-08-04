@@ -36,7 +36,7 @@ public class EventPlannerTest {
     @Test
     public void newEventPlanner_calculateCostTotal_(){
         EventPlanner testEventPlanner = new EventPlanner(4,25,"american","soda","dj");
-        assertEquals(700, testEventPlanner.calculateCostTotal(4,25,"american","soda","dj"));
+        assertEquals(1500, testEventPlanner.calculateCostTotal(4,25,"american","soda","dj"));
     }
 
 }
