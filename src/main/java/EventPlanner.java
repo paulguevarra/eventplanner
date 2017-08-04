@@ -22,4 +22,7 @@ public class EventPlanner {
         return expectedDurationTime;
     }
 
+    public String getChosenFood() {
+        return chosenFood;
+    }
 }
