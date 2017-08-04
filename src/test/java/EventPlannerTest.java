@@ -33,5 +33,10 @@ public class EventPlannerTest {
         EventPlanner testEventPlanner = new EventPlanner(4,25,"american","soda","dj");
         assertEquals("dj", testEventPlanner.getChosenEntertainment());
     }
+    @Test
+    public void newEventPlanner_calculateCostTotal_(){
+        EventPlanner testEventPlanner = new EventPlanner(4,25,"american","soda","dj");
+        assertEquals(400, testEventPlanner.calculateCostTotal());
+    }
 
 }
