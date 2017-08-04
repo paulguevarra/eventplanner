@@ -5,14 +5,14 @@ public class EventPlanner {
     private int expectedDurationTime;
     private String chosenFood;
     private String chosenBeverage;
-    private String chosenEntretainment;
+    private String chosenEntertainment;
 
     public EventPlanner (int duration, int guestCount, String food, String beverage, String entertainment){
         expectedDurationTime = duration;
         expectedNumberGuests = guestCount;
         chosenFood = food;
         chosenBeverage = beverage;
-        chosenEntretainment = entertainment;
+        chosenEntertainment = entertainment;
 
     }
     public int countExpectedGuests(){
@@ -28,5 +28,9 @@ public class EventPlanner {
 
     public String getChosenBeverage() {
         return chosenBeverage;
+    }
+
+    public String getChosenEntertainment() {
+        return chosenEntertainment;
     }
 }
