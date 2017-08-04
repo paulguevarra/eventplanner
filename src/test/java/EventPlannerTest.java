@@ -13,4 +13,9 @@ public class EventPlannerTest {
         EventPlanner testEventPlanner = new EventPlanner();
         assertEquals(4, testEventPlanner.receiveGuestTimeDuration(4));
     }
+    @Test
+    public void newEventPlanner_instantiatesCorrectly(){
+        EventPlanner testEventPlanner = new EventPlanner("john", "american", "soda", "dj", 4, 25);
+        assertEquals(true, testEventPlanner instanceof EventPlanner);
+    }
 }

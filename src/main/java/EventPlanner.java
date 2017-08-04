@@ -1,6 +1,9 @@
+import java.awt.*;
+
 public class EventPlanner {
     private int expectedNumberGuests;
     private int expectedDurationTime;
+
 
 
     public int countExpectedGuests(int userGuestNum){
