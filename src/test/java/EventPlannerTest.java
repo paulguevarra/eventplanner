@@ -39,10 +39,20 @@ public class EventPlannerTest {
         EventPlanner testEventPlanner = new EventPlanner(4,25,"american","soda","dj");
         assertEquals(1500, testEventPlanner.calculateCostTotal(4,25,"american","soda","dj"));
     }
-//    @Test
-//    public void newEventPlanner_addCouponDiscount() {
-//        EventPlanner testEventPlanner = new EventPlanner(4, 25, "american", "soda", "dj");
-//        assertEquals(1400, testEventPlanner.calculateDiscount(100));
-//    }
+    @Test
+    public void newEventPlanner_qualifyForDiscount_50() {
+        EventPlanner testEventPlanner = new EventPlanner(4, 25, "american", "soda", "dj");
+        assertEquals(50, testEventPlanner.discountQualifier("epicodus"));
+    }
+    @Test
+    public void newEventPlanner_qualifyForDiscount_100() {
+        EventPlanner testEventPlanner = new EventPlanner(4, 25, "american", "soda", "dj");
+        assertEquals(100, testEventPlanner.discountQualifier("excellence"));
+    }
+    @Test
+    public void newEventPlanner_qualifyForDiscount_0() {
+        EventPlanner testEventPlanner = new EventPlanner(4, 25, "american", "soda", "dj");
+        assertEquals(0, testEventPlanner.discountQualifier("none"));
+    }
 
 }

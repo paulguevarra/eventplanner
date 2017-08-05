@@ -8,9 +8,7 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Welcome to Simply Catered");
         System.out.println("=========================");
-        System.out.println(" ");
         System.out.println("We will work your event so that you don't have to.");
-        System.out.println(" ");
         System.out.println("-------------------------");
         System.out.println(" ");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -40,10 +38,17 @@ public class App {
 
             EventPlanner userEvent = new EventPlanner(duration, guestCount, food, beverage, entertainment);
 
-            int totalCost = EventPlanner.calculateCostTotal(userEvent.receiveGuestTimeDuration(), userEvent.countExpectedGuests(),userEvent.getChosenFood(),userEvent.getChosenBeverage(),userEvent.getChosenEntertainment());
+            int userTotalCost = EventPlanner.calculateCostTotal(userEvent.receiveGuestTimeDuration(), userEvent.countExpectedGuests(),userEvent.getChosenFood(),userEvent.getChosenBeverage(),userEvent.getChosenEntertainment());
 
-            System.out.println("Fantastic! Our calculations show that your total cost is $"+totalCost+".00");
+            System.out.println("Fantastic! Our calculations show that your total cost is $"+userTotalCost+".00");
 
+            System.out.println("Finally, enter your promotion code now to apply discount.");
+            String discountCode = bufferedReader.readLine();
+
+            int totalDiscount = EventPlanner.discountQualifier(discountCode);
+
+            int finalTotalCost = userTotalCost - totalDiscount;
+            System.out.println("Your final total cost is $"+finalTotalCost+".00 after any valid discount is applied.");
 
 
         } catch (IOException e){

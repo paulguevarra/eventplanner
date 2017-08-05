@@ -1,6 +1,8 @@
 package myPackage;
 
 
+import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
+
 import java.util.Map;
 import java.util.HashMap;
 
@@ -11,9 +13,7 @@ public class EventPlanner {
     private String chosenFood;
     private String chosenBeverage;
     private String chosenEntertainment;
-    private int totalCost;
-    private int discountedTotalCost;
-    private int discountCode;
+
 
     public EventPlanner (int duration, int guestCount, String food, String beverage, String entertainment){
         expectedDurationTime = duration;
@@ -57,9 +57,23 @@ public class EventPlanner {
         int totalCost = (100*duration)+(guestCount*serviceProvided.get(food))+(guestCount*serviceProvided.get(beverage))+(duration*serviceProvided.get(entertainment));
         return totalCost;
     }
-//    public int calculateDiscount(int discount, totalCost){
-//        discountedTotalCost = (totalCost-discount);
-//        return discountedTotalCost;
-//    }
+    public static int  discountQualifier(String discountCode){
+        int discountedAmount;
+        switch (discountCode){
+            case "epicodus":
+                discountedAmount = 50;
+                System.out.println("Discount Accepted! You get $50 off.");
+                break;
+            case "excellence":
+                discountedAmount = 100;
+                System.out.println("Discount Accepted! You get $100 off.");
+                break;
+            default:
+                discountedAmount = 0;
+                System.out.println("No Discount Applied!");
+        }
+
+        return discountedAmount;
+    }
 
 }
