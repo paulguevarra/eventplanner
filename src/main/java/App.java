@@ -16,7 +16,7 @@ public class App {
         try {
             String name = bufferedReader.readLine();
             System.out.println("Hello "+name+"!");
-            System.out.println("How long is the duration of your event?");
+            System.out.println("How long is the duration of your event in hours?");
             String userDuration = bufferedReader.readLine();
             int duration = Integer.parseInt(userDuration);
 
@@ -48,7 +48,10 @@ public class App {
             int totalDiscount = EventPlanner.discountQualifier(discountCode);
 
             int finalTotalCost = userTotalCost - totalDiscount;
-            System.out.println("Your final total cost is $"+finalTotalCost+".00 after any valid discount is applied.");
+            System.out.println(name+", your final total cost is $"+finalTotalCost+".00 after any valid discount is applied.");
+            System.out.println("This price reflects the serving of "+userEvent.getChosenFood()+" food and "+userEvent.getChosenBeverage()+" for beverages.");
+            System.out.println("The option for entertainment selection was: "+userEvent.getChosenEntertainment());
+            System.out.println("This "+userEvent.receiveGuestTimeDuration()+" hour event was estimated for "+userEvent.countExpectedGuests()+" guests");
 
 
         } catch (IOException e){
