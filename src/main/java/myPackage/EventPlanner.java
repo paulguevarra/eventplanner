@@ -1,3 +1,5 @@
+package myPackage;
+
 import java.awt.*;
 import java.util.Map;
 import java.util.HashMap;
@@ -9,7 +11,9 @@ public class EventPlanner {
     private String chosenFood;
     private String chosenBeverage;
     private String chosenEntertainment;
-    private int totalCost;
+    public int totalCost;
+    private int discountedTotalCost;
+    private int discountCode;
 
     public EventPlanner (int duration, int guestCount, String food, String beverage, String entertainment){
         expectedDurationTime = duration;
@@ -53,4 +57,9 @@ public class EventPlanner {
         totalCost = (100*duration)+(guestCount*serviceProvided.get(food))+(guestCount*serviceProvided.get(beverage))+(duration*serviceProvided.get(entertainment));
         return totalCost;
     }
+//    public int calculateDiscount(int discount, totalCost){
+//        discountedTotalCost = (totalCost-discount);
+//        return discountedTotalCost;
+//    }
+
 }
