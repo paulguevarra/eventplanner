@@ -1,6 +1,6 @@
 package myPackage;
 
-import java.awt.*;
+
 import java.util.Map;
 import java.util.HashMap;
 
@@ -11,7 +11,7 @@ public class EventPlanner {
     private String chosenFood;
     private String chosenBeverage;
     private String chosenEntertainment;
-    public int totalCost;
+    private int totalCost;
     private int discountedTotalCost;
     private int discountCode;
 
@@ -41,7 +41,7 @@ public class EventPlanner {
     public String getChosenEntertainment() {
         return chosenEntertainment;
     }
-    public int calculateCostTotal(int duration, int guestCount, String food, String beverage, String entertainment){
+    public static int calculateCostTotal(int duration, int guestCount, String food, String beverage, String entertainment){
         Map<String,Integer> serviceProvided = new HashMap<>();
         serviceProvided.put("american",10);
         serviceProvided.put("mexican",11);
@@ -51,10 +51,10 @@ public class EventPlanner {
         serviceProvided.put("beer",9);
         serviceProvided.put("wine",10);
         serviceProvided.put("dj",200);
-        serviceProvided.put("live band",375);
+        serviceProvided.put("band",375);
         serviceProvided.put("none",0);
 
-        totalCost = (100*duration)+(guestCount*serviceProvided.get(food))+(guestCount*serviceProvided.get(beverage))+(duration*serviceProvided.get(entertainment));
+        int totalCost = (100*duration)+(guestCount*serviceProvided.get(food))+(guestCount*serviceProvided.get(beverage))+(duration*serviceProvided.get(entertainment));
         return totalCost;
     }
 //    public int calculateDiscount(int discount, totalCost){
