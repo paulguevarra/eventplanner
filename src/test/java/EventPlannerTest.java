@@ -37,7 +37,7 @@ public class EventPlannerTest {
     @Test
     public void newEventPlanner_calculateCostTotal_(){
         EventPlanner testEventPlanner = new EventPlanner(4,25,"american","soda","dj");
-        assertEquals(1500, testEventPlanner.calculateCostTotal(4,25,"american","soda","dj"));
+        assertEquals(1500, testEventPlanner.calculateCostTotal());
     }
     @Test
     public void newEventPlanner_qualifyForDiscount_50() {
@@ -54,5 +54,9 @@ public class EventPlannerTest {
         EventPlanner testEventPlanner = new EventPlanner(4, 25, "american", "soda", "dj");
         assertEquals(0, testEventPlanner.discountQualifier("none"));
     }
-
+    @Test
+    public void newEventPlanner_qualifyForDiscount_140() {
+        EventPlanner testEventPlanner = new EventPlanner(4, 25, "american", "soda", "dj");
+        assertEquals(1450, testEventPlanner.discountApplier("epicodus"));
+    }
 }
